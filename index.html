@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrickCalculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest.json">
+
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <h1>BrickCalculator</h1>
+        <button class="theme-toggle" id="themeBtn">
+            <span class="material-symbols-outlined">dark_mode</span>
+        </button>
+    </header>
+
+    <main>
+        <label class="lbl-scale">Scale</label>
+
+        <div class="area-scale-left">
+            <input type="number" id="scaleL" value="1" class="scale-input">
+        </div>
+        <div class="area-scale-center">
+            <span class="colon">:</span>
+        </div>
+        <div class="area-scale-right">
+            <input type="number" id="scaleR" value="1" class="scale-input">
+        </div>
+
+        <label class="lbl-real">Real Size</label>
+        <label class="lbl-brick">Brick Size</label>
+
+        <div class="area-real-input">
+            <input type="number" id="inputReal" placeholder="">
+        </div>
+        <input type="number" id="inStud" data-unit="stud" class="right-input area-stud-in" placeholder="">
+        <span class="unit-label area-stud-lbl">stud</span>
+
+        <div class="area-unit">
+            <div class="select-wrapper">
+                <select id="unitSelect">
+                    <optgroup label="Metric">
+                        <option value="mm">mm</option>
+                        <option value="cm" selected>cm</option>
+                        <option value="m">m</option>
+                        <option value="km">km</option>
+                    </optgroup>
+                    <optgroup label="Imperial">
+                        <option value="in">in</option>
+                        <option value="ft">ft</option>
+                        <option value="yd">yd</option>
+                        <option value="1/4in">1/4 in</option>
+                    </optgroup>
+                    <optgroup label="Brick">
+                        <option value="stud">stud</option>
+                        <option value="plate">plate</option>
+                        <option value="brick">brick</option>
+                        <option value="figh">figH</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <input type="number" id="inPlate" data-unit="plate" class="right-input area-plate-in" placeholder="">
+        <span class="unit-label area-plate-lbl">plate</span>
+
+        <input type="number" id="inBrick" data-unit="brick" class="right-input area-brick-in" placeholder="">
+        <span class="unit-label area-brick-lbl">brick</span>
+
+        <input type="number" id="in16std" data-unit="s16" class="right-input area-16std-in" placeholder="">
+        <span class="unit-label area-16std-lbl">16std</span>
+
+        <input type="number" id="in32std" data-unit="s32" class="right-input area-32std-in" placeholder="">
+        <span class="unit-label area-32std-lbl">32std</span>
+
+        <div class="area-btn-brick">
+            <button class="chip-btn active" id="btnToBrick">To Brick</button>
+        </div>
+        <input type="number" id="in48std" data-unit="s48" class="right-input area-48std-in" placeholder="">
+        <span class="unit-label area-48std-lbl">48std</span>
+
+        <div class="area-btn-real">
+            <button class="chip-btn" id="btnToReal">To Real</button>
+        </div>
+        <input type="number" id="inLDU" data-unit="ldu" class="right-input area-ldu-in" placeholder="">
+        <span class="unit-label area-ldu-lbl">LDU</span>
+
+        <div class="area-btn-scale">
+            <button class="chip-btn" id="btnToScale">To Scale</button>
+        </div>
+        <input type="number" id="inFigH" data-unit="figh" class="right-input area-figh-in" placeholder="">
+        <span class="unit-label area-figh-lbl">figH</span>
+
+        <footer>
+            <div style="margin-bottom: 8px;">
+                LDU: LDraw Unit<br>
+                figH: Minifigure Height = 12.5 plates
+            </div>
+            Developed by <a href="https://x.com/nagani_brick" target="_blank">Nagani</a> with Gemini Pro
+        </footer>
+    </main>
+</div>
+
+<div id="toast" class="toast hidden">入力は1箇所のみにしてください</div>
+
+<script src="script.js"></script>
+</body>
+</html>
